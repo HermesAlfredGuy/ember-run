@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>Ember Run</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 32 32%27%3E%3Ccircle cx=%2716%27 cy=%2716%27 r=%2712%27 fill=%27%23ffb36b%27/%3E%3C/svg%3E" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500;700&family=Inter:wght@400;600&display=swap" rel="stylesheet" />
+  <script type="module" crossorigin src="./assets/index-rLL1yhr-.js"></script>
+  <link rel="stylesheet" crossorigin href="./assets/index-BPni54sb.css">
+</head>
+<body>
+  <div id="app">
+    <canvas id="gl"></canvas>
+
+    <div id="hud" aria-live="off">
+      <div class="hud-tl"><span class="hud-label">Score</span><span id="hud-score" class="hud-big">0</span><span id="hud-combo" class="hud-combo"></span></div>
+      <div class="hud-tr"><span class="hud-label">Time</span><span id="hud-time" class="hud-big">60.0</span><span id="hud-hits" class="hud-hits">◆◆◆</span></div>
+      <div class="hud-bottom"><span class="hud-label">Boost</span><div class="boost"><i id="hud-boost"></i></div></div>
+      <div id="pops"></div>
+    </div>
+
+    <section id="screen-title" class="screen is-on">
+      <p class="kicker">Dune Sea · Last light</p>
+      <h1 class="logo">Ember<span>Run</span></h1>
+      <p class="sub">Skim the dunes. Chain the embers. Don't kiss the spires.</p>
+      <button id="btn-start" class="cta">Fly <kbd>Enter</kbd></button>
+      <p class="keys"><kbd>WASD</kbd>/<kbd>↑↓←→</kbd> steer &nbsp;·&nbsp; <kbd>Space</kbd> boost &nbsp;·&nbsp; <kbd>Esc</kbd> pause</p>
+    </section>
+    <section id="screen-pause" class="screen"><h2 class="logo small">Paused</h2><p class="keys"><kbd>Esc</kbd> to resume</p></section>
+    <section id="screen-over" class="screen">
+      <p class="kicker">Run complete</p>
+      <h2 class="logo small"><span id="final-score">0</span></h2>
+      <p class="sub">Best <b id="best-score">0</b></p>
+      <button id="btn-retry" class="cta">Again <kbd>Enter</kbd></button>
+    </section>
+
+    <div class="stick" aria-hidden="true"><i></i></div>
+    <button class="touch-btn" data-touch-action="boost" aria-label="Boost">Boost</button>
+    <button class="mute" data-mute aria-label="Toggle sound" aria-pressed="false">♪</button>
+  </div>
+</body>
+</html>
