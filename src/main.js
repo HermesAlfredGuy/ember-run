@@ -7,6 +7,7 @@ import { createAudio } from './engine/audio.js';
 import { createEnvironment } from './engine/environment.js';
 import { createUI } from './ui/ui.js';
 import { createGame } from './game/game.js';
+import { reduced } from './motion.js';
 
 const params = new URLSearchParams(location.search);
 const canvas = document.querySelector('#gl');
@@ -38,7 +39,7 @@ document.querySelectorAll('[data-mute]').forEach((b) => {
   b.setAttribute('aria-pressed', String(audio.muted));
   b.addEventListener('click', () => b.setAttribute('aria-pressed', String(audio.toggleMute())));
 });
-if (matchMedia('(prefers-reduced-motion: reduce)').matches) game.cam.shakeScale = 0.25;
+if (reduced) game.cam.shakeScale = 0.25; // only when the viewer asked for calm (src/motion.js)
 
 // QA hooks: deterministic stepping + autopilot so agents can capture real gameplay.
 //   ?autoplay=1  -> starts immediately with the bot flying
