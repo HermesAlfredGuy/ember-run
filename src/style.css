@@ -69,15 +69,3 @@ kbd { font: 600 11px/1 var(--font-ui); padding: 4px 7px; border-radius: 5px; bac
 @keyframes pop { 0% { opacity: 0; transform: translate(-50%, 10px) scale(.6); } 20% { opacity: 1; transform: translate(-50%, -10px) scale(1.1); } 100% { opacity: 0; transform: translate(-50%, -70px) scale(1); } }
 @keyframes hit { from { opacity: 1; } to { opacity: 0; } }
 @keyframes rise { from { opacity: 0; transform: translateY(18px); } }
-/* --- motion toggle: the only thing that calms the game (see src/motion.js) ---- */
-.motion-toggle {
-  position: fixed; left: 14px; bottom: 14px; z-index: 6;
-  font: 600 10px/1 var(--font-ui); letter-spacing: .16em; text-transform: uppercase;
-  padding: 9px 13px; border-radius: 999px; cursor: pointer;
-  color: var(--ink); background: rgba(18, 12, 20, .78);
-  border: 1px solid rgba(255, 244, 232, .26); backdrop-filter: blur(8px);
-  opacity: .95; transition: opacity .18s, border-color .18s;
-}
-.motion-toggle:hover, .motion-toggle:focus-visible { border-color: rgba(255, 244, 232, .6); }
-html.reduced .screen.is-on > *, html.reduced .hud-big.bump, html.reduced .pop { animation-duration: .01s !important; }
-html.reduced .hud-big.warn { animation: none; }
